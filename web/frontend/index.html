@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        
+        function decimalToBinary(number) {
+            console.log("Started");
+            let parsedNumber = number
+            let bits = [];
+            while (parsedNumber > 0) {
+                bits.push(parsedNumber % 2);
+                parsedNumber = parseInt(parsedNumber / 2);
+            }
+            console.log("Finished");
+            const bytes = bits.reverse().join('');
+            log.textContent = `Form Submitted! Time stamp: ${event.timeStamp}`;
+            console.log("after text ");
+            event.preventDefault();
+        }
+        const form = document.getElementById('form');
+        const log = document.getElementById('log');
+        form.addEventListener('submit', decimalToBinary);
+    </script>
+</head>
+
+<body>
+    <form id="form"">
+        <div>
+            <label for=" decimalNumber">Insert a decimal Number</label>
+        <input type="number" id="decimalNumber" name="decimalNumber">
+        </div>
+        <button type="submit">submit</button>
+    </form>
+</body>
+<p id="log"></p>
+
+</html>
